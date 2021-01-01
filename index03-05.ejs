@@ -12,15 +12,25 @@
 
 <body class="container">
     <header>
-        <h1 class="display-4"><%=title %></h1>
+        <h1 class="display-4">
+            <%=title %>
+        </h1>
     </header>
     <div role="main">
-        <p><%=content %></p>
+        <p>
+            <%=content %>
+        </p>
         <table class="table">
-            <% var id=0; %>
             <% for(var key in data) { %>
-            <%- include('data_item', {id:++id, key:key, val:[data[key]]}) %>
-            <% } %>
+                <tr>
+                    <th>
+                        <%= key %>
+                    </th>
+                    <td>
+                        <%= data[key] %>
+                    </td>
+                </tr>
+                <% } %>
         </table>
     </div>
 </body>
